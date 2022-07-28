@@ -12,42 +12,46 @@ export default function LogInForm() {
     }
   };
   return (
-    <form onSubmit={submitHandler}>
-      <div className="mb-3">
-        <label
-          htmlFor="exampleInputEmail1"
-          className="form-label"
-        >
-          Имя пользователя
-        </label>
-        <input
-          value={input.username}
-          onChange={changeHandler}
-          type="text"
-          name="username"
-          className="form-control"
-          id="InputUserName"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <div className="mb-3">
-        <label
-          htmlFor="Password1"
-          className="form-label"
-        >
-          Пароль
-        </label>
-        <input
-          value={input.password}
-          onChange={changeHandler}
-          type="password"
-          name="password"
-          className="form-control"
-          id="Password1"
-        />
-      </div>
+    <div className="col">
+      <div className="row w-50 d-flex p-2 d-flex justify-content-centers mx-auto">
+        <form onSubmit={submitHandler}>
+          <div className="mb-3">
+            <label
+              htmlFor="exampleInputEmail1"
+              className="form-label"
+            >
+              Имя пользователя
+            </label>
+            <input
+              value={input.username}
+              onChange={changeHandler}
+              type="text"
+              name="username"
+              className="form-control"
+              id="InputUserName"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div className="mb-3">
+            <label
+              htmlFor="Password1"
+              className="form-label"
+            >
+              Пароль
+            </label>
+            <input
+              value={input.password}
+              onChange={changeHandler}
+              type="password"
+              name="password"
+              className="form-control"
+              id="Password1"
+            />
+          </div>
 
-      <button type="submit" className="btn btn-primary">Войти</button>
-    </form>
+          <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#449532' }}>Войти</button>
+        </form>
+      </div>
+    </div>
   );
 }
