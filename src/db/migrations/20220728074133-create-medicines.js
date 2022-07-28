@@ -6,10 +6,13 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+      },
+      name: {
+        type: Sequelize.TEXT,
       },
       img: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       price: {
         type: Sequelize.INTEGER
@@ -18,15 +21,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       stock: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       }
     });
   },
