@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-export default function SignInForm({ setAuthUser }) {
+export default function SignUpForm({ setAuthUser }) {
   const [input, setInput] = useState({ username: '', password: '', repeat: '' });
   const changeHandler = (e) => setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   const submitHandler = (e) => {
