@@ -4,7 +4,7 @@ import { StaticRouter } from 'react-router-dom/server';
 import fs from 'fs';
 import path from 'path';
 import hbs from 'hbs';
-import Index from '../components/Index';
+import App from '../components/App';
 
 export default function template(initState) {
   const Path = path.join(__dirname, '../view/index.hbs');
@@ -12,7 +12,7 @@ export default function template(initState) {
   const hbsTemplate = hbs.compile(html);
   const reactComponent = renderToString(
     <StaticRouter location={initState.path}>
-      <Index {...initState} />
+      <App {...initState} />
     </StaticRouter>,
   );
   return hbsTemplate({

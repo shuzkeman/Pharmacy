@@ -1,16 +1,11 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import LogInForm from './Registration/LogInForm';
-import SignUpForm from './Registration/SignUpForm';
+import { hydrate } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
-export default function App() {
-  return (
-    <div className="container">
-      <Routes>
-        <Route path="/" />
-        <Route path="/login" element={<LogInForm />} />
-        <Route path="/signup" element={<SignUpForm />} />
-      </Routes>
-    </div>
-  );
-}
+hydrate(
+  <BrowserRouter>
+    <App {...window.initState} />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
