@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 
 export default function SignUpForm({ setAuthUser }) {
   const [input, setInput] = useState({ username: '', password: '', repeat: '' });
-  const changeHandler = (e) => setInput((prev) => ({ ...prev, [e.target.username]: e.target.value }));
+  const changeHandler = (e) => setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   const submitHandler = (e) => {
+    console.log('----->', input);
     e.preventDefault();
     if (input.password !== '' && input.username !== '' && input.repeat === input.password) {
       axios.post('/api/signup', input)
-        .then((res) => setAuthUser(res.data));
+        .then((res) => console.log('===???==='));
     }
   };
   return (

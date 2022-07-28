@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-export default function LogInForm() {
+export default function LogInForm({ setAuthUser }) {
   const [input, setInput] = useState({ username: '', password: '' });
   const changeHandler = (e) => setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   const submitHandler = (e) => {
     e.preventDefault();
     if (input.password !== '' && input.username !== '') {
-      axios.post('/api/v1/users', input)
+      axios.post('/api/login', input)
         .then((res) => setAuthUser(res.data));
     }
   };
