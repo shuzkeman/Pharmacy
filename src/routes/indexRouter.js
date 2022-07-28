@@ -4,7 +4,7 @@ import template from '../template';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send(template({ path: req.originalUrl }));
+  res.send(template({ path: req.originalUrl })); //1
 });
 
 export default router;
