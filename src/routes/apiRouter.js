@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.get('/cardmed', async (req, res) => {
   const medicines = await Medicines.findAll();
-  console.log(medicines);
   res.json(medicines);
 });
 
@@ -22,6 +21,12 @@ router.post('/login', async (req, res) => {
   if (loggedUser.hashpass === req.body.password) {
     res.json(loggedUser);
   }
+});
+
+router.get('/logout', (req, res) => {
+  res.clearCookie('user_sid'); // Удалить куку
+  req.session.destroy(); // Завершить сессию
+  res.sendStatus(200);
 });
 
 export default router;

@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function NavBarAuth({ setAuthUser, authUser }) {
+export default function NavBarAuth({ setAuthUser, authUser, logoutHandler }) {
   return (
     <>
       <ul className="nav justify-content-end align-items-center">
         <li className="nav-item" style={{ color: '#134907' }}>
           Добро пожаловать,
-          <a className="nav-link link-success fw-semibold" aria-current="page" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#" style={{ color: '#134907', display: 'inline', marginRight: '20px' }}>${authUser.name}</a>
+          <a className="nav-link link-success fw-semibold" aria-current="page" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#" style={{ color: '#134907', display: 'inline', marginRight: '20px' }}>{authUser.name}</a>
         </li>
         <li className="nav-item">
-          <button className="btn btn-outline-success me-2" type="button">Корзина</button>
+          <Link to='/cart'> <button className="btn btn-outline-success me-2" type="button">Корзина</button></Link>
         </li>
         <li className="nav-item">
-          <button className="btn btn-outline-success me-2" type="button">Выход</button>
+          <Link to='/'><button className="btn btn-outline-success me-2" type="button" onClick={logoutHandler}>Выход</button></Link>
         </li>
       </ul>
 
