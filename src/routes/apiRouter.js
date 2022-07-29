@@ -1,7 +1,13 @@
 import express from 'express';
-import { User } from '../db/models';
+import { User, Medicines } from '../db/models';
 
 const router = express.Router();
+
+router.get('/cardmed', async (req, res) => {
+  const medicines = await Medicines.findAll();
+  console.log(medicines);
+  res.json(medicines);
+});
 
 router.post('/signup', async (req, res) => {
   // console.log(JSON.parse(JSON.stringify(req)));
