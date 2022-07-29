@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function CardMed() {
+export default function CardMed({ med }) {
   return (
-    <div className="card" style={{ width: '18rem', margin: '20px' }}>
-      <img src="https://raduga-ural.ru/image/cache/data/new/tovar1/188-767x767.jpg" className="card-img-top" alt="img" />
+    <div className="card" style={{ width: '300px', margin: '10px' }}>
+      <img src={`${med?.img}`} className="card-img-top" alt="img" style={{height: 'auto', width: '200px'}} />
       <div className="card-body">
-        <h5 className="card-title">Парацетамол</h5>
-        <p className="card-text">200₽</p>
+        <h5 className="card-title">{med?.name}</h5>
+        <p className="card-text">{med?.price}₽</p>
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: '#449532' }}>Положить в корзину</button>
       </div>
     </div>

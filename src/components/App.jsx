@@ -12,9 +12,9 @@ export default function App() {
 
   return (
     <div className="container">
-      <Navbar authUser={authUser} />
+      <Navbar authUser={authUser} setAuthUser={setAuthUser} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home authUser={authUser} />} />
         <Route path="/login" element={<LogInForm setAuthUser={setAuthUser} />} />
         <Route path="/signup" element={<SignUpForm />} />
       </Routes>
