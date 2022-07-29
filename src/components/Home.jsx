@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CardMed from './CardMed';
 import axios from 'axios';
+import CardMed from './CardMed';
 
 export default function Home() {
   const [medicines, setMedicines] = useState([]);
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="col">
       <div className="row d-flex p-1 d-flex justify-content-center">
-      {medicines.map((el) => <CardMed key={el.id, el.name, el.price, el.img} med={el} />)}
+        {medicines.map((el) => <CardMed key={el.id, el.name, el.price, el.img} med={el} />)}
       </div>
     </div>
   );

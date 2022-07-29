@@ -1,14 +1,19 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function LogInForm({ setAuthUser }) {
+  const navigate = useNavigate();
   const [input, setInput] = useState({ username: '', password: '' });
   const changeHandler = (e) => setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   const submitHandler = (e) => {
     e.preventDefault();
     if (input.password !== '' && input.username !== '') {
       axios.post('/api/login', input)
-        .then((res) => setAuthUser(res.data));
+        .then((res) => {
+          setAuthUser(res.data);
+          navigate('/');
+        });
     }
   };
   return (
